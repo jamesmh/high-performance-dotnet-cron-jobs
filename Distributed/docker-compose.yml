@@ -1,0 +1,29 @@
+﻿version: "3.3"
+services:
+  dotnet1:
+    build:
+      context: ..
+      dockerfile: ./Distributed/Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 200M
+  dotnet2:
+    build:
+      context: ..
+      dockerfile: ./Distributed/Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 200M
+  dotnet3:
+    build:
+      context: ..
+      dockerfile: ./Distributed/Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 200M

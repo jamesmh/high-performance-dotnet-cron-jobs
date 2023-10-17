@@ -1,0 +1,11 @@
+﻿version: "3.3"
+services:
+  dotnet:
+    build:
+      context: ..
+      dockerfile: ./Basic/Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 200M
