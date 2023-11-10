@@ -32,6 +32,12 @@ host.Services.UseScheduler(scheduler =>
     scheduler.Schedule<ProcessAllInvoicesInvocable>()
         .EverySeconds(5)
         .PreventOverlapping(nameof(ProcessAllInvoicesInvocable));
+    
+    scheduler.Schedule(() =>
+        {
+            Console.WriteLine("### Total records processed: " + TotalRecordsProcessed.Value);
+        })
+        .EverySecond();
 
 }).LogScheduledTaskProgress(host.Services.GetService<ILogger<IScheduler>>());
 

@@ -41,6 +41,7 @@ public class ProcessAllCitiesInvocable : IInvocable
             await Task.WhenAll(tasks);
 
             lastIdProcessed = items.Last().CityId;
+            Interlocked.Add(ref TotalRecordsProcessed.Value, items.Count);
         }
 
         watch.Stop();

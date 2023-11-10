@@ -46,6 +46,7 @@ public class ProcessAllInvoicesInvocable : IInvocable
                 await Task.WhenAll(tasks);
 
                 lastIdProcessed = items.Last().InvoiceId;
+                Interlocked.Add(ref TotalRecordsProcessed.Value, items.Count);
             }
             
             watch.Stop();

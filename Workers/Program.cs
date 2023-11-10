@@ -17,6 +17,12 @@ var host = builder.Build();
 
 host.Services.UseScheduler(scheduler =>
 {
+    scheduler.Schedule(() =>
+        {
+            Console.WriteLine("### Total records processed: " + TotalRecordsProcessed.Value);
+        })
+        .EverySecond();
+    
     scheduler.Schedule<ProcessAllOrdersInvocable>()
         .EverySeconds(5)
         .PreventOverlapping(nameof(ProcessAllOrdersInvocable));

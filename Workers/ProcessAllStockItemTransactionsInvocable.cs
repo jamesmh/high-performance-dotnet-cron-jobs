@@ -41,6 +41,7 @@ public class ProcessAllStockItemTransactionsInvocable : IInvocable
             await Task.WhenAll(tasks);
 
             lastIdProcessed = items.Last().StockItemTransactionId;
+            Interlocked.Add(ref TotalRecordsProcessed.Value, items.Count);
         }
 
         watch.Stop();
