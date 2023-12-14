@@ -1,6 +1,6 @@
 ## High-Performance DotNet CRON Jobs
 
-This is code to go along with an article I wrote. Each separate .NET project loosely represents one step in the progression of basic->advanced ways to build a CRON job system.
+This is code to go along with [an article I wrote on my blog](https://www.jamesmichaelhickey.com/high-performance-dotnet-cron-jobs/). Each separate .NET project loosely represents one step in the progression of basic->advanced ways to build a CRON job system.
 
 Here are the instructions for getting this working on your machine:
 
@@ -18,5 +18,5 @@ I used [this .backpac of the WideWorldImporters sample database.](https://github
 
 Clone the repo, make sure the SQLServer docker container is running, and run each project's docker file!
 
-To run each projector, run the following command from the root of a given project: `docker-compose up --build --remove-orphans --force-recreate`
+To run each project, run the following command from it's root: `docker-compose up --build --remove-orphans --force-recreate`
 
